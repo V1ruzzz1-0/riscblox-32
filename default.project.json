@@ -1,0 +1,13 @@
+{
+    "name": "RiscBlox-32",
+
+    "tree": {
+        "$className": "DataModel",
+
+        "StarterGui": {
+            "RISCBLOX": {
+                "$path": "RISCBLOX"
+            }
+        }
+    }
+}

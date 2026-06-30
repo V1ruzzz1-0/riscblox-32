@@ -212,6 +212,7 @@ RiscBlox-32 is a **concluded experimental project** and serves as a complete Pro
 > 🛑 **Notice:** This project is now in an immutable, feature-complete state. It is provided **as-is**. There are no plans to add new features, expand instruction coverage, or maintain the codebase. Forking is highly encouraged if you wish to experiment with it.
 
 ### Implemented Modules:
+
 * ✅ **RV32I CPU Emulator:** Full interpretation core with 32 registers and sign extension.
 * ✅ **RAM Subsystem:** Address-based unified memory with 8/16/32-bit operations.
 * ✅ **GPU Framebuffer Renderer:** RGB565 pipeline with dirty-block optimization.
@@ -225,14 +226,17 @@ RiscBlox-32 is a **concluded experimental project** and serves as a complete Pro
 If you want to modify the BIOS or use the build tree as a starting point for your own firmware, the environment is ready.
 
 ### Toolchain Prerequisites
+
 You need a RISC-V GNU toolchain installed on your host system (e.g., `riscv64-elf-gcc`).
 
 ### Building
+
 Navigate to the `bios/` directory and run `make`:
 
 ```bash
 cd bios
-make```
+make
+```
 
 ---
 

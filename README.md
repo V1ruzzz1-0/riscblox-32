@@ -86,6 +86,21 @@ Each component is separated into its own module, allowing the virtual machine to
 
 ---
 
+## Hardware Specifications
+
+The virtual machine emulates a complete hardware platform inside the Luau runtime. While the host system ultimately determines execution performance, the virtual hardware exposes a fixed architecture to the firmware and software running on top of it.
+
+| Component | Specification |
+|-----------|---------------|
+| **CPU** | Custom RISC-V RV32I interpreter |
+| **CPU Clock** | Dynamic / Unlocked. Execution is synchronized with Roblox's `Heartbeat` event using a strict **12 ms** frame budget (`MAX_FRAME_BUDGET`). Effective clock speed scales automatically with the host system's single-core Luau performance. |
+| **RAM** | **512 MB** unified simulated physical memory allocated using Luau `buffer`, beginning at `0x80000000`. |
+| **VRAM** | **8 MB** dedicated graphics memory mapped into the unified address space at `0x80010000`. |
+| **Graphics** | RGB565 (16-bit) framebuffer with a logical resolution of **600×480**, rendered onto a **75×60** physical TTY display using dirty-block rendering optimization. |
+| **Firmware** | Custom BIOS built with the standard RISC-V GNU toolchain. |
+
+---
+
 ## Boot Process
 
 RiscBlox-32 follows a hardware-inspired startup sequence:
